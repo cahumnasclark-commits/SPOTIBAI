@@ -7,7 +7,7 @@ const songs = [
     {
         title: "BILAT",
         artist: "Tagalog vs Bisaya",
-        file: "music/bisaya-final-boss.mp3",
+        file: "bisaya-final-boss.mp3",
 
         cover: "BILAT",
         coverImage: "bisaya-meme.jpg?v=2",
@@ -58,7 +58,7 @@ But I you, ohhh.
     {
         title: "Sinaunang Busseng",
         artist: "Tagalog vs Bisaya",
-        file: "music/sinaunang-busseng.mp3",
+        file: "sinaunang-busseng.mp3",
 
         cover: "BI",
 
@@ -77,7 +77,7 @@ Line 4
     {
         title: "Owshie Tangalog",
         artist: "Tagalog vs Bisaya",
-        file: "music/owshie-tangalog.mp3",
+        file: "owshie-tangalog.mp3",
 
         cover: "BI",
 
