@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotibai</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <div class="logo-icon" aria-label="Spotibai logo">
+                <strong>BI</strong>
+                <small>BISAYA</small>
+                <i></i>
+                <i></i>
+                <i></i>
+            </div>
+            <span>Spotibai</span>
+        </div>
+
+        <nav class="main-nav">
+            <button class="nav-item active" data-page="home">
+                <span class="nav-icon">⌂</span>
+                <span>Home</span>
+            </button>
+
+            <button class="nav-item" data-page="search">
+                <span class="nav-icon">⌕</span>
+                <span>Search</span>
+            </button>
+
+            <button class="nav-item" data-page="library">
+                <span class="nav-icon">▣</span>
+                <span>Your Library</span>
+            </button>
+        </nav>
+
+        <div class="playlist-header">
+            <span>Your Playlists</span>
+            <button id="addPlaylist">+</button>
+        </div>
+
+        <div class="playlist-list" id="playlistList">
+            <button>My Playlist #1</button>
+            <button>Chill Vibes</button>
+            <button>Gaming Mode</button>
+            <button>Late Night</button>
+            <button>Favorites</button>
+        </div>
+
+        <div class="sidebar-bottom">
+            <button>⚙ Settings</button>
+            <button>ⓘ About Spotibai</button>
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN -->
+    <main class="main-content">
+
+        <!-- TOP BAR -->
+        <header class="topbar">
+
+            <div class="navigation-buttons">
+                <button id="backBtn">‹</button>
+                <button id="forwardBtn">›</button>
+            </div>
+
+            <div class="search-box" id="topSearch">
+                <span>⌕</span>
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="What do you want to play?"
+                >
+            </div>
+
+            <div class="account-area">
+                <button class="premium-btn" id="premiumButton">Premium</button>
+                <button class="profile-btn">C</button>
+            </div>
+
+        </header>
+
+
+        <!-- HOME PAGE -->
+        <section class="page active-page" id="homePage">
+
+            <section class="hero">
+
+                <div class="hero-text">
+                    <span class="eyebrow">WELCOME TO</span>
+                    <h1>Spotibai</h1>
+                    <p>
+                        Your music. Your vibe. Your world.
+                        Discover new music and enjoy your favorite songs.
+                    </p>
+
+                    <div class="hero-buttons">
+                        <button class="primary-btn" id="heroPlay">
+                            ▶ Play
+                        </button>
+
+                        <button class="secondary-btn">
+                            + Add to Library
+                        </button>
+                    </div>
+                </div>
+
+                <div class="hero-art">
+                    <div class="vinyl">
+                        <div class="vinyl-center">S</div>
+                    </div>
+                </div>
+
+            </section>
+
+
+            <!-- QUICK PICKS -->
+            <section class="section">
+
+                <div class="section-title">
+                    <h2>Good evening</h2>
+                    <button class="show-all">Show all</button>
+                </div>
+
+                <div class="quick-grid">
+
+                    <div class="quick-card" data-song="Blinding Lights">
+                        <div class="quick-art art-red">BL</div>
+                        <span>Blinding Lights</span>
+                        <button class="quick-play">▶</button>
+                    </div>
+
+                    <div class="quick-card" data-song="Starboy">
+                        <div class="quick-art art-purple">SB</div>
+                        <span>Starboy</span>
+                        <button class="quick-play">▶</button>
+                    </div>
+
+                    <div class="quick-card" data-song="After Hours">
+                        <div class="quick-art art-blue">AH</div>
+                        <span>After Hours</span>
+                        <button class="quick-play">▶</button>
+                    </div>
+
+                    <div class="quick-card" data-song="Save Your Tears">
+                        <div class="quick-art art-orange">SY</div>
+                        <span>Save Your Tears</span>
+                        <button class="quick-play">▶</button>
+                    </div>
+
+                    <div class="quick-card" data-song="Die For You">
+                        <div class="quick-art art-pink">DFY</div>
+                        <span>Die For You</span>
+                        <button class="quick-play">▶</button>
+                    </div>
+
+                    <div class="quick-card" data-song="Popular">
+                        <div class="quick-art art-green">POP</div>
+                        <span>Popular</span>
+                        <button class="quick-play">▶</button>
+                    </div>
+
+                </div>
+
+            </section>
+            <section class="section meme-section">
+
+    <div class="section-title">
+        <h2>🔥 Spotibai Meme Hits</h2>
+        <button class="show-all">See all</button>
+    </div>
+
+    <div class="meme-songs" id="memeSongs"></div>
+
+</section>
+
+
+            <!-- MADE FOR YOU -->
+            <section class="section">
+
+                <div class="section-title">
+                    <h2>Made For You</h2>
+                    <button class="show-all">Show all</button>
+                </div>
+
+                <div class="music-grid">
+
+                    <article class="music-card" data-song="Daily Mix 1">
+                        <div class="album-art gradient-one">
+                            <span>DM1</span>
+                            <button class="card-play">▶</button>
+                        </div>
+
+                        <h3>Daily Mix 1</h3>
+                        <p>The Weeknd, Drake, Future and more</p>
+                    </article>
+
+                    <article class="music-card" data-song="Daily Mix 2">
+                        <div class="album-art gradient-two">
+                            <span>DM2</span>
+                            <button class="card-play">▶</button>
+                        </div>
+
+                        <h3>Daily Mix 2</h3>
+                        <p>Modern hits and your favorites</p>
+                    </article>
+
+                    <article class="music-card" data-song="Chill Mix">
+                        <div class="album-art gradient-three">
+                            <span>CHILL</span>
+                            <button class="card-play">▶</button>
+                        </div>
+
+                        <h3>Chill Mix</h3>
+                        <p>Relaxing music for your day</p>
+                    </article>
+
+                    <article class="music-card" data-song="Discover Weekly">
+                        <div class="album-art gradient-four">
+                            <span>DISCOVER</span>
+                            <button class="card-play">▶</button>
+                        </div>
+
+                        <h3>Discover Weekly</h3>
+                        <p>Your weekly collection of new music</p>
+                    </article>
+
+                    <article class="music-card" data-song="Release Radar">
+                        <div class="album-art gradient-five">
+                            <span>RADAR</span>
+                            <button class="card-play">▶</button>
+                        </div>
+
+                        <h3>Release Radar</h3>
+                        <p>Fresh releases picked for you</p>
+                    </article>
+
+                </div>
+
+            </section>
+
+
+            <!-- POPULAR -->
+            <section class="section">
+
+                <div class="section-title">
+                    <h2>Popular right now</h2>
+                    <button class="show-all">Show all</button>
+                </div>
+
+                <div class="song-table">
+
+                    <div class="song-row" data-song="Midnight">
+                        <span class="song-number">1</span>
+
+                        <div class="table-art gradient-six">M</div>
+
+                        <div class="song-info">
+                            <strong>Midnight</strong>
+                            <span>Spotibai Artist</span>
+                        </div>
+
+                        <span class="song-album">Midnight Dreams</span>
+                        <span class="song-duration">3:42</span>
+
+                        <button class="row-play">▶</button>
+                    </div>
+
+
+                    <div class="song-row" data-song="Neon">
+                        <span class="song-number">2</span>
+
+                        <div class="table-art gradient-seven">N</div>
+
+                        <div class="song-info">
+                            <strong>Neon</strong>
+                            <span>Spotibai Artist</span>
+                        </div>
+
+                        <span class="song-album">City Lights</span>
+                        <span class="song-duration">3:18</span>
+
+                        <button class="row-play">▶</button>
+                    </div>
+
+
+                    <div class="song-row" data-song="Lost Again">
+                        <span class="song-number">3</span>
+
+                        <div class="table-art gradient-eight">LA</div>
+
+                        <div class="song-info">
+                            <strong>Lost Again</strong>
+                            <span>Spotibai Artist</span>
+                        </div>
+
+                        <span class="song-album">Lost Again</span>
+                        <span class="song-duration">4:05</span>
+
+                        <button class="row-play">▶</button>
+                    </div>
+
+                </div>
+
+            </section>
+
+        </section>
+
+
+        <!-- SEARCH PAGE -->
+        <section class="page" id="searchPage">
+
+            <div class="page-heading">
+                <h1>Search</h1>
+                <p>Find your favorite music.</p>
+            </div>
+
+            <div class="big-search">
+                <span>⌕</span>
+                <input
+                    type="text"
+                    id="bigSearchInput"
+                    placeholder="Search for songs, artists, albums..."
+                >
+            </div>
+
+            <div id="searchResults">
+
+                <h2>Browse all</h2>
+
+                <div class="browse-grid">
+
+                    <div class="browse-card browse-one">
+                        <span>Pop</span>
+                    </div>
+
+                    <div class="browse-card browse-two">
+                        <span>Hip-Hop</span>
+                    </div>
+
+                    <div class="browse-card browse-three">
+                        <span>Rock</span>
+                    </div>
+
+                    <div class="browse-card browse-four">
+                        <span>Chill</span>
+                    </div>
+
+                    <div class="browse-card browse-five">
+                        <span>Workout</span>
+                    </div>
+
+                    <div class="browse-card browse-six">
+                        <span>Gaming</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- LIBRARY PAGE -->
+        <section class="page" id="libraryPage">
+
+            <div class="page-heading">
+                <h1>Your Library</h1>
+                <p>Your saved music and playlists.</p>
+            </div>
+
+            <div class="library-tabs">
+                <button class="active">Playlists</button>
+                <button>Artists</button>
+                <button>Albums</button>
+            </div>
+
+            <div class="music-grid">
+
+                <article class="music-card liked-songs-card" id="likedSongsCard">
+                    <div class="album-art library-art">
+                        <span>♥</span>
+                    </div>
+
+                    <h3>Liked Songs</h3>
+                    <p>Your favorite songs</p>
+                </article>
+
+                <article class="music-card">
+                    <div class="album-art gradient-one">
+                        <span>MY</span>
+                    </div>
+
+                    <h3>My Playlist #1</h3>
+                    <p>Playlist • Spotibai</p>
+                </article>
+
+                <article class="music-card">
+                    <div class="album-art gradient-three">
+                        <span>CHILL</span>
+                    </div>
+
+                    <h3>Chill Vibes</h3>
+                    <p>Playlist • Spotibai</p>
+                </article>
+
+            </div>
+
+        </section>
+
+    <!-- LIKED SONGS PAGE -->
+    <section id="likedSongsPage" class="page liked-songs-page">
+
+        <button class="back-button" id="backFromLikedSongs">← Back to Library</button>
+
+        <div class="page-heading liked-heading">
+            <h1>Liked Songs</h1>
+            <p>Your saved Spotibai music.</p>
+        </div>
+
+        <div class="liked-songs-grid liked-page-grid" id="likedSongsGrid"></div>
+
+        <p class="empty-liked" id="emptyLikedSongs">
+            Songs you like will appear here.
+        </p>
+
+    </section>
+
+    <!-- LYRICS PAGE -->
+    <section id="lyricsPage" class="page lyrics-page">
+
+        <button class="back-button" id="backFromLyrics">← Back</button>
+
+        <div class="lyrics-header">
+            <div class="lyrics-cover" id="lyricsCover">BI</div>
+
+            <div class="lyrics-song-info">
+                <p>NOW PLAYING</p>
+                <h1 id="lyricsTitle">Song Title</h1>
+                <h3 id="lyricsArtist">Artist</h3>
+            </div>
+        </div>
+
+        <div class="lyrics-container">
+            <div class="lyrics-title">
+                <h2>Lyrics</h2>
+            </div>
+
+            <div id="lyricsText" class="lyrics-text"></div>
+        </div>
+
+    </section>
+
+    <!-- PREMIUM PAGE -->
+    <section id="premiumPage" class="page premium-page">
+
+        <button class="back-button" id="backFromPremium">← Back</button>
+
+        <div class="premium-heading">
+            <span class="eyebrow">SPOTIBAI PREMIUM</span>
+            <h1>Choose your Premium plan</h1>
+            <p>Enjoy your music without limits.</p>
+        </div>
+
+        <div class="premium-plans">
+
+            <article class="premium-plan">
+                <span class="plan-label">MONTHLY</span>
+                <h2>Premium Mini</h2>
+                <strong>₱69</strong>
+                <span class="plan-period">per month</span>
+                <p>Perfect for listening every day.</p>
+                <button class="plan-button">Choose plan</button>
+            </article>
+
+            <article class="premium-plan featured-plan">
+                <span class="plan-label">MOST POPULAR</span>
+                <h2>Premium Individual</h2>
+                <strong>₱69</strong>
+                <span class="plan-period">per month</span>
+                <p>Ad-free music and unlimited skips.</p>
+                <button class="plan-button">Choose plan</button>
+            </article>
+
+            <article class="premium-plan">
+                <span class="plan-label">FAMILY</span>
+                <h2>Premium Family</h2>
+                <strong>₱69</strong>
+                <span class="plan-period">per month</span>
+                <p>Premium listening for your whole family.</p>
+                <button class="plan-button">Choose plan</button>
+            </article>
+
+        </div>
+
+    </section>
+
+    </main>
+
+
+    <!-- MUSIC PLAYER -->
+    <footer class="player">
+
+        <div class="now-playing">
+
+            <div class="player-art" id="playerArt">
+                S
+            </div>
+
+            <div class="player-song">
+                <strong id="playerTitle">Nothing playing</strong>
+                <span id="playerArtist">Choose a song</span>
+            </div>
+
+            <button class="like-button" id="likeButton">♡</button>
+
+        </div>
+
+
+        <div class="player-center">
+
+            <div class="player-controls">
+
+                <button id="shuffleButton" aria-label="Shuffle">🔀</button>
+                <button id="previousBtn">◀◀</button>
+
+                <button class="main-play" id="playButton">
+                    ▶
+                </button>
+
+                <button id="nextBtn">▶▶</button>
+                <button id="repeatButton" aria-label="Repeat">🔁</button>
+
+            </div>
+
+            <div class="progress-area">
+
+                <span id="currentTime">0:00</span>
+
+                <div class="progress-bar" id="progressBar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+
+                <span id="totalTime">0:00</span>
+
+            </div>
+
+        </div>
+
+
+        <div class="player-right">
+
+            <button>▤</button>
+            <button>🔊</button>
+
+            <input
+                type="range"
+                id="volume"
+                min="0"
+                max="100"
+                value="80"
+            >
+
+            <button>⛶</button>
+
+        </div>
+
+    </footer>
+
+</div>
+
+
+<div class="toast" id="toast">
+    Added to your library
+</div>
+
+<audio id="audioPlayer"></audio>
+
+<!-- Cover: public-domain 1904 Visayan face portrait from Wikimedia Commons. -->
+
+
+<script src="script.js?v=2"></script>
+
+</body>
+</html>
